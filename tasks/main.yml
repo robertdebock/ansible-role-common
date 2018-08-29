@@ -20,3 +20,4 @@
     - "{{ common_nameservers }}"
   when:
     - common_nameservers is defined
+    - ansible_virtualization_type != "docker"
