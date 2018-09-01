@@ -23,6 +23,7 @@ Role Variables
 --------------
 
 - common_nameservers: A list of nameservers. [default: 1.1.1.1, 1.0.0.1]
+- groups.all: (fixed, not a variable that can be changed) The list of all servers in the inventory that will be added to /etc/hosts.
 
 Dependencies
 ------------
