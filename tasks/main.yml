@@ -20,11 +20,11 @@
     - "{{ common_nameservers }}"
   when:
     - common_nameservers is defined
-    - ansible_virtualization_type != "kocker"
+    - ansible_virtualization_type != "docker"
 
 - name: fill /etc/hosts
   template:
     src: hosts.j2
     dest: /etc/hosts
   when:
-    - ansible_virtualization_type != "kocker"
+    - ansible_virtualization_type != "docker"
