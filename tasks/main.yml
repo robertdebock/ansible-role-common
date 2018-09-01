@@ -15,7 +15,6 @@
   lineinfile:
     path: /etc/resolv.conf
     line: "nameserver {{ item.name }}"
-    regexp: "^nameserver "
   with_items:
     - "{{ common_nameservers }}"
   when:
