@@ -3,3 +3,5 @@
 common_nameservers:
   - name: 1.1.1.1
   - name: 1.0.0.1
+
+common_hosts: "{{ groups.all }}"
