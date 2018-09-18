@@ -20,6 +20,8 @@
   when:
     - common_nameservers is defined
     - ansible_virtualization_type != "docker"
+  notify:
+    - gather facts
 
 - name: fill /etc/hosts
   template:
