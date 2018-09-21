@@ -29,3 +29,6 @@
     dest: /etc/hosts
   when:
     - ansible_virtualization_type != "docker"
+
+- name: flush handlers
+  meta: flush_handlers
