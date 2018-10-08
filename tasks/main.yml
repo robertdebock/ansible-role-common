@@ -15,6 +15,11 @@
 - name: set hostname
   hostname:
     name: "{{ inventory_hostname }}"
+  notify:
+    - reboot
+
+- name: flush handlers
+  meta: flush_handlers
 
 - name: fill /etc/hosts
   template:
@@ -22,6 +27,3 @@
     dest: /etc/hosts
   when:
     - ansible_virtualization_type != "docker"
-
-- name: flush handlers
-  meta: flush_handlers

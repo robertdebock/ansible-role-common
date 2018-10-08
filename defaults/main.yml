@@ -5,3 +5,9 @@ common_nameservers:
   - name: 1.0.0.1
 
 common_hosts: "{{ groups.all }}"
+
+# How long to wait before sending a reboot.
+common_reboot_delay: 4
+
+# Number of seconds to wait before checking if the machine is up.
+common_up_delay: 8
