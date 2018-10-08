@@ -30,8 +30,6 @@ platforms:
     image: fedora:latest
   - name: common-fedora-rawhide
     image: fedora:rawhide
-  - name: common-gentoo
-    image: gentoo/stage3-amd64
   - name: common-opensuse-leap
     image: opensuse:leap
   - name: common-opensuse-tumbleweed
