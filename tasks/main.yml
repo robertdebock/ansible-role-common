@@ -12,6 +12,10 @@
   notify:
     - gather facts
 
+- name: set hostname
+  hostname:
+    name: "{{ inventory_hostname }}"
+
 - name: fill /etc/hosts
   template:
     src: hosts.j2
