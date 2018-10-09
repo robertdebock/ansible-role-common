@@ -11,7 +11,7 @@
   ignore_errors: yes
   when:
     - ansible_virtualization_type != "docker"
-    - update_reboot
+    - common_reboot
   notify:
     - wait for the machine to be up
 
