@@ -11,3 +11,6 @@ common_reboot_delay: 4
 
 # Number of seconds to wait before checking if the machine is up.
 common_up_delay: 8
+
+# Do you want to reboot on a hostname change?
+common_reboot: yes
