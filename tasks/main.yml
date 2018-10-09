@@ -15,8 +15,10 @@
 - name: set hostname
   hostname:
     name: "{{ inventory_hostname }}"
+  when:
+    - ansible_virtualization_type != "docker"
   notify:
-    - reboot
+    - reboot for hostname
 
 - name: flush handlers
   meta: flush_handlers

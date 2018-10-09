@@ -4,7 +4,7 @@
   setup:
   become: no
 
-- name: reboot
+- name: reboot for hostname
   shell: (sleep "{{ common_reboot_delay }}" && shutdown -r now "ansible-role-common" &)
   async: 1
   poll: 0
