@@ -3,18 +3,3 @@
 - name: gather facts
   setup:
   become: no
-
-- name: reboot for hostname
-  shell: (sleep "{{ common_reboot_delay }}" && shutdown -r now "ansible-role-common" &)
-  async: 1
-  poll: 0
-  ignore_errors: yes
-  when:
-    - ansible_virtualization_type != "docker"
-    - common_reboot
-  notify:
-    - wait for the machine to be up
-
-- name: wait for the machine to be up
-  wait_for_connection:
-    delay: "{{ common_up_delay }}"

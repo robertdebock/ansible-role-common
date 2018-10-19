@@ -17,11 +17,13 @@
     name: "{{ inventory_hostname }}"
   when:
     - ansible_virtualization_type != "docker"
-  notify:
-    - reboot for hostname
+  register: set_hostname
 
-- name: flush handlers
-  meta: flush_handlers
+- name: reboot for hostname
+  include_role:
+    name: robertdebock.reboot
+  when:
+    - set_hostname.changed
 
 - name: fill /etc/hosts
   template:
