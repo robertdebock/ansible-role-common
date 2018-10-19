@@ -24,6 +24,7 @@
     name: robertdebock.reboot
   when:
     - set_hostname.changed
+    - common_reboot
 
 - name: fill /etc/hosts
   template:
