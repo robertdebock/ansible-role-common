@@ -25,6 +25,8 @@
   when:
     - set_hostname.changed
     - common_reboot
+  tags:
+    - skip_ansible_lint
 
 - name: fill /etc/hosts
   template:
