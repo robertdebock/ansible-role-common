@@ -46,7 +46,7 @@ Compatibility
 
 This role has been tested against the following distributions and Ansible version:
 
-|distribution|ansible 2.4|ansible 2.5|ansible 2.6|ansible-2.7|ansible-devel|
+|distribution|ansible 2.4|ansible 2.5|ansible 2.6|ansible 2.7|ansible devel|
 |------------|-----------|-----------|-----------|-----------|-------------|
 |alpine-edge*|yes|yes|yes|yes|yes*|
 |alpine-latest|yes|yes|yes|yes|yes*|
@@ -64,7 +64,7 @@ This role has been tested against the following distributions and Ansible versio
 |ubuntu-devel*|yes|yes|yes|yes|yes*|
 |ubuntu-latest|yes|yes|yes|yes|yes*|
 
-The star means the build may fail, it's marked as an experimental build.
+A single star means the build may fail, it's marked as an experimental build.
 
 Example Playbook
 ----------------
