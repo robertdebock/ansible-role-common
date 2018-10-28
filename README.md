@@ -5,41 +5,70 @@ common
 
 Provides common functionality for your system.
 
-[Unit tests](https://travis-ci.org/robertdebock/ansible-role-common) are done on every commit and periodically.
+These functions include:
+- Setting the nameserver.
+- Setting the hostname. (and optionally reboot)
+- Fill /etc/hosts.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-common/issues)
 
-To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+Example Playbook
+----------------
+
+This example is taken from `molecule/default/playbook.yml`:
 ```
-pip install molecule
-molecule test
+---
+- name: Converge
+  hosts: all
+  gather_facts: false
+  become: true
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: ansible-role-common
+
 ```
-There are many scenarios available, please have a look in the `molecule/` directory.
+
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```
+---
+# defaults file for common
+
+# A list of nameservers to configure.
+common_nameservers:
+  - name: 1.1.1.1
+  - name: 1.0.0.1
+
+# Fill /etc/hosts with all hosts in the play.
+common_hosts: "{{ groups.all }}"
+
+# Do you want to reboot on a hostname change?
+common_reboot: yes
+
+```
+
+Requirements
+------------
+
+- Access to a repository containing packages, likely on the internet.
+- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
+
+These roles can be installed to ensure all requirements are met:
+
+- none
+
+To install all requirements at once: `ansible-galaxy install -r requirements.yml`.
 
 Context
---------
+-------
+
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
 ![dependencies](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/common.png "Dependency")
 
-Requirements
-------------
-
-- A system installed with required packages to run Ansible. Hint: [bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap).
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
-
-Role Variables
---------------
-
-- common_nameservers: A list of nameservers. [default: 1.1.1.1, 1.0.0.1]
-- groups.all: (fixed, not a variable that can be changed) The list of all servers in the inventory that will be added to /etc/hosts.
-
-Dependencies
-------------
-
-- None known.
 
 Compatibility
 -------------
@@ -66,38 +95,26 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
-Example Playbook
-----------------
+Testing
+-------
 
-```
----
-- name: common
-  hosts: all
-  gather_facts: no
-  become: yes
+[Unit tests](https://travis-ci.org/robertdebock/ansible-role-common) are done on every commit and periodically.
 
-  roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.common
-      common_nameservers:
-        - name: 195.241.48.33
-        - name: 195.241.49.33
-```
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-common/issues)
 
-To install this role:
-- Install this role individually using `ansible-galaxy install robertdebock.common`
+To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+```
+pip install molecule
+molecule test
+```
+There are many specific scenarios available, please have a look in the `molecule/` directory.
 
-Sample roles/requirements.yml: (install with `ansible-galaxy install -r roles/requirements.yml
-```
----
-- name: robertdebock.bootstrap
-- name: robertdebock.common
-```
 
 License
 -------
 
-Apache License, Version 2.0
+Apache-2.0
+
 
 Author Information
 ------------------
