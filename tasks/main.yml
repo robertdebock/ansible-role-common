@@ -12,6 +12,9 @@
   notify:
     - gather facts
 
+- name: flush handlers
+  meta: flush_handlers
+
 - name: set hostname
   hostname:
     name: "{{ inventory_hostname }}"
