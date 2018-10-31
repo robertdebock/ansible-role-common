@@ -15,6 +15,13 @@
 - name: flush handlers
   meta: flush_handlers
 
+- name: fill /etc/hosts
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+  when:
+    - ansible_virtualization_type != "docker"
+
 - name: set hostname
   hostname:
     name: "{{ inventory_hostname }}"
@@ -30,10 +37,3 @@
     - common_reboot
   tags:
     - skip_ansible_lint
-
-- name: fill /etc/hosts
-  template:
-    src: hosts.j2
-    dest: /etc/hosts
-  when:
-    - ansible_virtualization_type != "docker"
