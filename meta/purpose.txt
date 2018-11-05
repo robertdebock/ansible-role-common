@@ -1,6 +1,0 @@
-Provides common functionality for your system.
-
-These functions include:
-- Setting the nameserver.
-- Setting the hostname. (and optionally reboot)
-- Fill /etc/hosts.
