@@ -3,13 +3,7 @@ common
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-common.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-common)
 
-Provides common functionality for your system.
-
-These functions include:
-- Setting the nameserver.
-- Setting the hostname. (and optionally reboot)
-- Fill /etc/hosts.
-
+The purpose of this role is to configure common things on your system.
 
 Example Playbook
 ----------------
