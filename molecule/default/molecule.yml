@@ -38,6 +38,8 @@ platforms:
     image: ubuntu:artful
   - name: common-ubuntu-devel
     image: ubuntu:devel
+  - name: common-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
