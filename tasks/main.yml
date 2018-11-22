@@ -8,7 +8,7 @@
     - "{{ common_nameservers }}"
   when:
     - common_nameservers is defined
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or common_ignore_docker
   notify:
     - gather facts
 
@@ -20,13 +20,13 @@
     src: hosts.j2
     dest: /etc/hosts
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or common_ignore_docker
 
 - name: set hostname
   hostname:
     name: "{{ inventory_hostname }}"
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or common_ignore_docker
   register: set_hostname
 
 - name: reboot for hostname
