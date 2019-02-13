@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: common-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: common-ubuntu-artful
-    image: ubuntu:artful
+  - name: common-ubuntu-latest
+    image: ubuntu:latest
+  - name: common-ubuntu-rolling
+    image: ubuntu:rolling
   - name: common-ubuntu-devel
     image: ubuntu:devel
   - name: common-ubuntu-latest
