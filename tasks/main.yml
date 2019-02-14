@@ -1,6 +1,11 @@
 ---
 # tasks file for common
-- name: set nameserver
+- name: check for network manager
+  stat:
+    path: /etc/NetworkManager/NetworkManager.conf
+  register: common_check_for_network_manager
+
+- name: set nameserver in resolv.conf
   lineinfile:
     path: /etc/resolv.conf
     line: "nameserver {{ item.name }}"
@@ -8,7 +13,19 @@
     - "{{ common_nameservers }}"
   when:
     - common_nameservers is defined
+    - not common_check_for_network_manager.stat.exists
     - ansible_virtualization_type != "docker" or common_ignore_docker
+  notify:
+    - gather facts
+
+- name: set nameservers in network manager
+  ini_file:
+    path: /etc/NetworkManager/conf.d/dnsservers.conf
+    section: global-dns-domain-*
+    option: servers
+    value: "{{ common_nameservers | join(',') }}"
+  when:
+    - common_check_for_network_manager.stat.exists
   notify:
     - gather facts
 
