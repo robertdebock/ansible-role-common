@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: common-opensuse-leap
     image: opensuse:leap
-  - name: common-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: common-ubuntu-latest
     image: ubuntu:latest
   - name: common-ubuntu-rolling
