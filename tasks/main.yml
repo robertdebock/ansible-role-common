@@ -8,7 +8,7 @@
 - name: set nameserver in resolv.conf
   lineinfile:
     path: /etc/resolv.conf
-    line: "nameserver {{ item.name }}"
+    line: "nameserver {{ item }}"
   with_items:
     - "{{ common_nameservers }}"
   when:
