@@ -1,4 +1,4 @@
 ---
 # vars file for common
 common_requirements:
-  - name: hostname
+  - hostname
