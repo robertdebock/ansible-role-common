@@ -1,5 +1,13 @@
 ---
 # tasks file for common
+- name: install requirements
+  package:
+    name: "{{ common_requirements }}"
+    state: present
+  register: common_install_requirements
+  until: common_install_requirements is succeeded
+  retries: 3
+
 - name: check for network manager
   stat:
     path: /etc/NetworkManager/NetworkManager.conf
@@ -34,7 +42,7 @@
 
 - name: set hostname
   hostname:
-    name: "{{ inventory_hostname }}"
+    name: "{{ common_hostname }}"
   when:
     - ansible_virtualization_type != "docker"
   register: set_hostname
