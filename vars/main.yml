@@ -5,7 +5,7 @@ _common_requirements:
     - hostname
   Alpine:
     - net-tools
-  ArchLinux
+  ArchLinux:
     - net-tools
   CentOS-6:
     - net-tools
