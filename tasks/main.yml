@@ -52,7 +52,7 @@
     name: robertdebock.reboot
   when:
     - set_hostname.changed
-    - common_reboot
+    - common_reboot | bool
   tags:
     - skip_ansible_lint
 
