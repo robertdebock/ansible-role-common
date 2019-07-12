@@ -35,6 +35,7 @@
   when:
     - common_check_for_network_manager.stat.exists
   notify:
+    - reload network manager
     - gather facts
 
 - name: flush handlers
