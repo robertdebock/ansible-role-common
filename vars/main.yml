@@ -3,6 +3,8 @@
 _common_requirements:
   default:
     - hostname
+  Amazon-2018:
+    - net-tools
   Alpine:
     - net-tools
   Archlinux:
