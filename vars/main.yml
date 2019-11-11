@@ -9,8 +9,6 @@ _common_requirements:
     - net-tools
   Archlinux:
     - net-tools
-  CentOS-6:
-    - net-tools
   CentOS:
     - dbus
 
