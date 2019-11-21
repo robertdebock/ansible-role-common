@@ -41,7 +41,6 @@ galaxy_info:
     - rhel
     - server
     - system
-    - ubuntu
 
 dependencies:
   - robertdebock.reboot
