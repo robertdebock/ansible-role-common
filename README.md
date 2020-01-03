@@ -4,6 +4,8 @@ common
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-common"> <img src="https://travis-ci.org/robertdebock/ansible-role-common.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/29224"/> <img src="https://img.shields.io/ansible/quality/29224"/>
 
+<a href="https://github.com/robertdebock/ansible-role-common/actions"><img src="https://github.com/robertdebock/ansible-role-common/workflows/GitHub%20Action/badge.svg"/></a>
+
 The purpose of this role is to configure common things on your system.
 
 Example Playbook
