@@ -7,8 +7,6 @@ _common_requirements:
     - net-tools
   Alpine:
     - net-tools
-  Archlinux:
-    - net-tools
   CentOS:
     - dbus
 
