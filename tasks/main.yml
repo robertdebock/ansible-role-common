@@ -19,8 +19,7 @@
       lineinfile:
         path: /etc/resolv.conf
         line: "nameserver {{ item }}"
-      with_items:
-        - "{{ common_nameservers }}"
+      loop: "{{ common_nameservers }}"
       when:
         - common_nameservers is defined
         - not common_check_for_network_manager.stat.exists
