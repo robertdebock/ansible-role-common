@@ -24,6 +24,7 @@
         - common_nameservers is defined
         - not common_check_for_network_manager.stat.exists
         - ansible_virtualization_type != "docker"
+        - ansible_virtualization_type != "container"
       notify:
         - gather facts
   rescue:
@@ -53,6 +54,7 @@
     name: "{{ common_hostname }}"
   when:
     - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "container"
   register: set_hostname
 
 - name: reboot for hostname
@@ -72,6 +74,7 @@
         dest: /etc/hosts
       when:
         - ansible_virtualization_type != "docker"
+        - ansible_virtualization_type != "container"
   rescue:
     - name: comfort users
       debug:
