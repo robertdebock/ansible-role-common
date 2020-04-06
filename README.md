@@ -29,7 +29,7 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
   become: yes
 
   roles:
-    - robertdebock.bootstrap
+    - role: robertdebock.bootstrap
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
@@ -101,7 +101,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|amazon|Candidate|
 |alpine|all|
 |debian|all|
 |el|7, 8|
