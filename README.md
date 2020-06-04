@@ -2,9 +2,9 @@
 
 The purpose of this role is to configure common things on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-common.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-common)|[![github](https://github.com/robertdebock/ansible-role-common/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-common/actions)|[![quality](https://img.shields.io/ansible/quality/29224)](https://galaxy.ansible.com/robertdebock/common)|[![downloads](https://img.shields.io/ansible/role/d/29224)](https://galaxy.ansible.com/robertdebock/common)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-common.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-common)|[![github](https://github.com/robertdebock/ansible-role-common/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-common/actions)|[![quality](https://img.shields.io/ansible/quality/29224)](https://galaxy.ansible.com/robertdebock/common)|[![downloads](https://img.shields.io/ansible/role/d/29224)](https://galaxy.ansible.com/robertdebock/common)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-common.svg)](https://github.com/robertdebock/ansible-role-common/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
