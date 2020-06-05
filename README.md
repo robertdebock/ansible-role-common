@@ -102,7 +102,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |container|tags|
 |---------|----|
 |alpine|all|
-|amazon|2018.03|
 |el|7, 8|
 |debian|buster, bullseye|
 |fedora|31, 32|
@@ -121,7 +120,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| Archlinux & Ansible 2.7 | New-style module did not handle its own exit |
+| amazonlinux | set hostname: [Errno 2] No such file or directory: '/etc/sysconfig/network' |
 
 
 ## [Testing](#testing)
