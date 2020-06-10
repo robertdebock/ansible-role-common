@@ -23,8 +23,7 @@
       when:
         - common_nameservers is defined
         - not common_check_for_network_manager.stat.exists
-        - ansible_virtualization_type != "docker"
-        - ansible_virtualization_type != "container"
+        - ansible_connection != "docker"
       notify:
         - gather facts
   rescue:
@@ -53,8 +52,7 @@
   hostname:
     name: "{{ common_hostname }}"
   when:
-    - ansible_virtualization_type != "docker"
-    - ansible_virtualization_type != "container"
+    - ansible_connection != "docker"
   register: hostname_set_hostname
 
 - name: reboot for hostname
@@ -73,8 +71,7 @@
         src: hosts.j2
         dest: /etc/hosts
       when:
-        - ansible_virtualization_type != "docker"
-        - ansible_virtualization_type != "container"
+        - ansible_connection != "docker"
   rescue:
     - name: comfort users
       debug:
