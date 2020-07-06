@@ -1,5 +1,6 @@
 ---
 # vars file for common
+
 _common_requirements:
   default:
     - hostname
