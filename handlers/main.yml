@@ -8,3 +8,8 @@
   service:
     name: NetworkManager
     state: reloaded
+
+- name: reboot
+  reboot:
+  when:
+    - common_reboot | bool
