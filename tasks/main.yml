@@ -56,7 +56,6 @@
     name: "{{ common_hostname }}"
   when:
     - ansible_connection != "docker"
-  register: hostname_set_hostname
   notify:
     - reboot
 
