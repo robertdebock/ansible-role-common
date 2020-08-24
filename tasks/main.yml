@@ -19,6 +19,7 @@
       lineinfile:
         path: /etc/resolv.conf
         line: "nameserver {{ item }}"
+        mode: "0644"
       loop: "{{ common_nameservers }}"
       when:
         - common_nameservers is defined
@@ -39,6 +40,7 @@
     section: global-dns-domain-*
     option: servers
     value: "{{ common_nameservers | join(',') }}"
+    mode: "0644"
   when:
     - common_check_for_network_manager.stat.exists
   notify:
@@ -62,6 +64,7 @@
       template:
         src: hosts.j2
         dest: /etc/hosts
+        mode: "0644"
       when:
         - ansible_connection != "docker"
   rescue:
