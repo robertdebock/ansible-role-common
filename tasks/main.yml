@@ -21,12 +21,12 @@
         line: "nameserver {{ item }}"
         mode: "0644"
       loop: "{{ common_nameservers }}"
-      when:
-        - common_nameservers is defined
-        - not common_check_for_network_manager.stat.exists
-        - ansible_connection != "docker"
       notify:
         - gather facts
+  when:
+    - common_nameservers is defined and (common_nameservers | length > 0)
+    - not common_check_for_network_manager.stat.exists
+    - ansible_connection != "docker"
   rescue:
     - name: comfort users
       debug:
@@ -43,6 +43,7 @@
     mode: "0644"
   when:
     - common_check_for_network_manager.stat.exists
+    - common_nameservers is defined and (common_nameservers | length > 0)
   notify:
     - reload network manager
     - gather facts
