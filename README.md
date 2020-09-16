@@ -32,13 +32,13 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.bootstrap
 ```
 
-For verification `molecule/resources/verify.yml` run after the role has been applied.
+For verification `molecule/resources/verify.yml` runs after the role has been applied.
 ```yaml
 ---
 - name: Verify
   hosts: all
   become: yes
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
     - name: check if connection still works
@@ -156,6 +156,11 @@ image="debian" tag="stable" tox
 
 Apache-2.0
 
+## [Contributors](#contributors)
+
+I'd like to thank everybody that made contributions to this repository. It motivates me, improves the code and is just fun to collaborate.
+
+- [dmrub](https://github.com/dmrub)
 
 ## [Author Information](#author-information)
 
