@@ -58,9 +58,9 @@ These variables are set in `defaults/main.yml`:
 common_hostname: "{{ inventory_hostname }}"
 
 # A list of nameservers to configure.
-common_nameservers:
-  - 1.1.1.1
-  - 1.0.0.1
+# common_nameservers:
+#   - 1.1.1.1
+#   - 1.0.0.1
 
 # Fill /etc/hosts with all hosts in the play.
 common_hosts: "{{ groups.all }}"
