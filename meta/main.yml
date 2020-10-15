@@ -37,8 +37,8 @@ galaxy_info:
 
   galaxy_tags:
     - common
-    - centos
-    - redhat
+    - hosts
+    - hostname
     - server
     - system
 
