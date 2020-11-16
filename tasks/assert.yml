@@ -27,5 +27,5 @@
   assert:
     that:
       - common_reboot is defined
-      - common_reboot | type_debug == "bool"
+      - common_reboot is boolean
     quiet: yes
