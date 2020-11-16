@@ -8,7 +8,6 @@
 - name: test if common_nameservers is set correctly
   assert:
     that:
-      - common_nameservers | length >= 0
       - common_nameservers is iterable
     quiet: yes
   when:
