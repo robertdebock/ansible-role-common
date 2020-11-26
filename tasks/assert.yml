@@ -1,4 +1,5 @@
 ---
+
 - name: test if common_hostname is set correctly
   assert:
     that:
