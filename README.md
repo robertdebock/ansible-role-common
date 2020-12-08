@@ -2,9 +2,9 @@
 
 The purpose of this role is to configure common things on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-common.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-common)|[![github](https://github.com/robertdebock/ansible-role-common/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-common/actions)|[![quality](https://img.shields.io/ansible/quality/29224)](https://galaxy.ansible.com/robertdebock/common)|[![downloads](https://img.shields.io/ansible/role/d/29224)](https://galaxy.ansible.com/robertdebock/common)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-common.svg)](https://github.com/robertdebock/ansible-role-common/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-common.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-common)|[![github](https://github.com/robertdebock/ansible-role-common/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-common/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-common/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-common)|[![quality](https://img.shields.io/ansible/quality/29224)](https://galaxy.ansible.com/robertdebock/common)|[![downloads](https://img.shields.io/ansible/role/d/29224)](https://galaxy.ansible.com/robertdebock/common)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-common.svg)](https://github.com/robertdebock/ansible-role-common/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
