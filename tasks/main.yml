@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ common_requirements }}"
     state: present
 
 - name: check for network manager
-  stat:
+  ansible.builtin.stat:
     path: /etc/NetworkManager/NetworkManager.conf
   register: common_check_for_network_manager
 
@@ -55,10 +55,10 @@
     - common_nameservers is defined
 
 - name: flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: set hostname
-  hostname:
+  ansible.builtin.hostname:
     name: "{{ common_hostname }}"
   when:
     - ansible_connection != "docker"
