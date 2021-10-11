@@ -73,7 +73,6 @@
         src: hosts.j2
         dest: /etc/hosts
         mode: "0644"
-
   rescue:
 
     - name: comfort users
