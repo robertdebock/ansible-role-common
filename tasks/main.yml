@@ -31,9 +31,7 @@
       when:
         - not common_check_for_network_manager.stat.exists
         - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
-
       rescue:
-
         - name: comfort users
           ansible.builtin.debug:
             msg:
@@ -73,9 +71,7 @@
         src: hosts.j2
         dest: /etc/hosts
         mode: "0644"
-
   rescue:
-
     - name: comfort users
       ansible.builtin.debug:
         msg:
