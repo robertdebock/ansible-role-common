@@ -1,0 +1,19 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: libvirt
+platforms:
+  - name: "common-${tag:-latest}"
+    box: almalinux/8
+    interfaces:
+      - network_name: public_network
+        dev: "${_TEST_BRIDGE_DEV:-virbr0}"
+        type: "bridge"
+        mode: "bridge"
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

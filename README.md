@@ -20,6 +20,19 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
     - role: robertdebock.common
 ```
 
+This example is taken from `molecule/libvirt/converge.yml` and is manually tested.
+```yaml
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.common
+      common_interface: ens6
+```
+
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
 ```yaml
 ---
@@ -52,8 +65,16 @@ common_hostname: "{{ inventory_hostname }}"
 # Fill /etc/hosts with all hosts in the play.
 common_hosts: "{{ groups.all }}"
 
+# set interface from which the address is obtained.
+# Default 'default_ipv4' is a special ansible placeholder.
+# common_interface: "default_ipv4"
+
 # Do you want to reboot on a hostname change?
 common_reboot: yes
+
+# Do you want to update /etc/hosts file
+common_update_hosts: yes
+
 ```
 
 ## [Requirements](#requirements)

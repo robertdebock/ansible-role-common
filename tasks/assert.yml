@@ -22,6 +22,20 @@
       - common_hosts is iterable
     quiet: yes
 
+- name: test if common_interface is set correctly
+  ansible.builtin.assert:
+    that:
+      - common_interface is string
+      - hostvars[host]['ansible_'+common_interface]['ipv4']['address'] is string
+    quiet: yes
+  loop: "{{ common_hosts }}"
+  loop_control:
+    loop_var: host
+  when:
+    - ansible_facts is defined
+    - common_interface is defined
+    - common_interface != "default_ipv4"
+
 - name: test if common_reboot is set correctly
   ansible.builtin.assert:
     that:

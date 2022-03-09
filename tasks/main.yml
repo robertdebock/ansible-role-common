@@ -78,4 +78,5 @@
           - "The file /etc/hosts could not be modified."
           - "This is likely because it is mapped from the Docker host to the Docker container."
   when:
+    - common_update_hosts
     - ansible_connection not in [ "container", "docker", "community.docker.docker" ]

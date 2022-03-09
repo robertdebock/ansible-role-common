@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: ansible-role-common
+      common_interface: ens6
