@@ -21,6 +21,9 @@
     - common_nameservers is defined
   block:
     - name: Set nameserver in resolv.conf
+      when:
+        - not common_check_for_network_manager.stat.exists
+        - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
       block:
         - name: Set nameserver in resolv.conf
           ansible.builtin.lineinfile:
@@ -30,9 +33,6 @@
           loop: "{{ common_nameservers }}"
           notify:
             - Gather facts
-      when:
-        - not common_check_for_network_manager.stat.exists
-        - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
       rescue:
         - name: Comfort users
           ansible.builtin.debug:
