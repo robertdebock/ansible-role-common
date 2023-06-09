@@ -5,6 +5,7 @@
     that:
       - common_hostname is defined
       - common_hostname is string
+      - common_hostname is not none
     quiet: yes
 
 - name: assert | Test if common_nameservers is set correctly
