@@ -2,9 +2,9 @@
 
 The purpose of this role is to configure common things on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-common/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-common/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-common/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-common)|[![quality](https://img.shields.io/ansible/quality/29224)](https://galaxy.ansible.com/robertdebock/common)|[![downloads](https://img.shields.io/ansible/role/d/29224)](https://galaxy.ansible.com/robertdebock/common)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-common.svg)](https://github.com/robertdebock/ansible-role-common/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-common/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-common/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-common/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-common)|[![downloads](https://img.shields.io/ansible/role/d/24464)](https://galaxy.ansible.com/robertdebock/common)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-common.svg)](https://github.com/robertdebock/ansible-role-common/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -98,7 +98,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-common/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-common/issues).
 
 ## [License](#license)
 
