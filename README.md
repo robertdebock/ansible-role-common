@@ -1,4 +1,4 @@
-# Ansible role [common](#common)
+# [Ansible role common](#common)
 
 The purpose of this role is to configure common things on your system.
 
