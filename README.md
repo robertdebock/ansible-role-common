@@ -14,8 +14,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   roles:
     - role: robertdebock.common
@@ -27,8 +27,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  gather_facts: no
-  become: yes
+  gather_facts: false
+  become: true
 
   roles:
     - role: robertdebock.bootstrap
@@ -56,7 +56,7 @@ common_hostname: "{{ inventory_hostname }}"
 common_hosts: "{{ groups.all }}"
 
 # Do you want to reboot on a hostname change?
-common_reboot: yes
+common_reboot: true
 ```
 
 ## [Requirements](#requirements)
